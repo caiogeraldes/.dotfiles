@@ -1,0 +1,9 @@
+#! /bin/bash
+
+livro="~/docs/Línguas/Indo-Europeias/Grego/Gramáticas/boas.pdf"
+
+pagina=$(cat ~/.scripts/boasmap | grep -P $1 | awk '{print $2}')
+echo $pagina
+echo $(cat ~/.scripts/boasmap | grep -P $1 | awk '{print $3}')
+zathura -P $pagina $livro &
+

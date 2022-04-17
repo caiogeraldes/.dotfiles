@@ -1,0 +1,22 @@
+#! /bin/bash
+session="doc"
+
+# Check if the session exists, discarding output
+# We can check $? for the exit status (zero for success, non-zero for failure)
+tmux has-session -t $session 2>/dev/null
+
+if [ $? != 0 ]; then
+  # Set up your session
+    tmux new-session -d -s "doc" -n "tese" -c ~/docs/Doutorado/tese "nvim main.tex"
+    tmux neww -a -t "doc" -n "data" -c ~/docs/Doutorado/data
+    tmux select-window -t "data"
+    tmux split-window -h "R"
+    tmux neww -a -t "doc" -n "arquivos" "ranger"
+    tmux neww -a -t "doc" -n "mesa" "neomutt"
+    tmux select-window -t "mesa"
+    tmux split-window -h "calcurse"
+    tmux select-window -t "tese"
+fi
+
+tmux -2 attach-session -t $session
+

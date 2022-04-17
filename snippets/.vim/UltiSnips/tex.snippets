@@ -1,0 +1,102 @@
+snippet chapter "Creates chapter tag" b
+\\chapter{$1}
+
+$0
+endsnippet
+
+snippet chapter* "Creates unumbered chapter tag" b
+\\chapter*{$1}
+
+$0
+endsnippet
+
+snippet section "Creates section tag" b
+\\section{$1}
+
+$0
+endsnippet
+
+snippet section* "Creates unumbered section tag" b
+\\section*{$1}
+
+$0
+endsnippet
+
+snippet subsection "Creates subsection tag" b
+\\subsection{$1}
+
+$0
+endsnippet
+
+snippet subsection* "Creates unumbered subsection tag" b
+\\subsection*{$1}
+
+$0
+endsnippet
+
+snippet env "begin{} / end{}" bm
+\\begin{$1}
+	$2
+\\end{$1}
+
+$0
+endsnippet
+
+snippet inparaenum "inparaenum" bm
+\\begin{inparaenum}
+\item $0
+\\end{inparaenum}
+
+endsnippet
+
+snippet compactenum "compactenum" bm
+\\begin{compactenum}
+\item $0
+\\end{compactenum}
+
+endsnippet
+
+snippet inparaitem "inparaitem" bm
+\\begin{inparaitem}
+\item $0
+\\end{inparaitem}
+
+endsnippet
+
+snippet compactitem "compactitem" bm
+\\begin{compactitem}
+\item $0
+\\end{compactitem}
+
+endsnippet
+
+snippet exgloss "build gloss" b
+\\$1g.\label{$5}\
+  $2\\\\
+\ $3\\\\
+\ $4
+
+$0
+endsnippet
+
+snippet linguex "build linguistic example" bs
+
+\\${1:ex}. $2
+
+$0
+endsnippet
+
+global !p
+def fix_indent(snip):
+    vim.eval('feedkeys("\<c-f>")')
+endglobal
+
+post_expand "fix_indent(snip)"
+snippet it "Individual item" b
+\item $0
+endsnippet
+
+snippet biblatexignore "ignore warnings from biblatex" b
+\usepackage{silence}
+\WarningsOff[biblatex]
+endsnippet

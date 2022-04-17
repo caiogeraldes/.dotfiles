@@ -1,0 +1,30 @@
+snippet book "Add book"
+@book{$1$2,
+    title        = {$3},
+    author       = {$4$1},
+    year         = $2,
+    publisher    = {$5},
+    address      = {$6},
+}
+$0
+endsnippet
+
+snippet article "Add article"
+@article{$1$2,
+    title        = {$3},
+    author       = {$4 $1},
+    year         = $2,
+    journal      = {$5},
+    volume       = $6,
+    number       = {$7},
+    pages        = {$8--$9},
+}
+$0
+endsnippet
+
+snippet doi "Add doi entry"
+doi          = {$1},
+$0
+endsnippet
+
+

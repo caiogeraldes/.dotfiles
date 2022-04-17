@@ -1,0 +1,38 @@
+#! /bin/bash
+
+if [ $1 -eq $1 2>/dev/null ] && [ $2 -eq $2 2>/dev/null ] && [ $1 -gt 0 ] && [ $2 -gt 0 ]
+then
+	if [ $2 -lt 10 ]
+	then
+		if [ $1 -lt 10 ] 
+		then	
+		echo "Touch"
+			link="https://sanskrit-lexicon.github.io/rvlinks/rvhymns/rv0$1.00$2.html"	
+		else
+			link="https://sanskrit-lexicon.github.io/rvlinks/rvhymns/rv$1.00$2.html"
+		fi
+
+	elif [ $2 -lt 100 ]
+	then
+		if [ $1 -lt 10 ] 
+		then	
+			link="https://sanskrit-lexicon.github.io/rvlinks/rvhymns/rv0$1.0$2.html"	
+		else
+			link="https://sanskrit-lexicon.github.io/rvlinks/rvhymns/rv$1.0$2.html"
+		fi
+	else
+		if [ $1 -lt 10 ] 
+		then	
+			link="https://sanskrit-lexicon.github.io/rvlinks/rvhymns/rv0$1.$2.html"
+		else
+			link="https://sanskrit-lexicon.github.io/rvlinks/rvhymns/rv$1.$2.html"
+		fi
+	fi
+	w3m $link > rv$1.$2
+	
+else
+    echo "Insira um valor válido."
+fi
+
+
+

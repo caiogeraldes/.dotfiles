@@ -1,0 +1,1 @@
+Plug 'eigenfoo/stan-vim'

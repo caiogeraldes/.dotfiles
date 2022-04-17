@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+set -eu
+
+source /opt/anaconda/bin/activate root

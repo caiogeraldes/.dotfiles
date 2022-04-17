@@ -1,0 +1,59 @@
+% TEX program = xelatex
+% TEX encoding = UTF-8
+
+\documentclass[article]{memoir}
+
+
+\usepackage{silence}
+\WarningsOff[biblatex]
+
+\usepackage[no-math]{fontspec}
+\usepackage[main=brazil]{babel}
+
+\setmainfont[BoldFont={Brill Bold},ItalicFont={Brill Italic}]{Brill}
+\setmonofont[Scale=0.75]{Noto Mono}
+
+\usepackage{linguex}
+\usepackage{tikz} %for all basic options
+\usepackage{tikz-qtree} %for simple tree syntax
+\usepgflibrary{arrows} %for arrow endings
+\usetikzlibrary{positioning,shapes.multipart} %for structured nodes
+\usetikzlibrary{tikzmark}
+\usepackage{tikz-qtree}
+\usepackage{tree-dvips}
+\usepackage{xargs}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+
+% Pacotes de diagramação
+\usepackage{paralist}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyphenat}
+
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\author{Caio Borges Aguida Geraldes}
+\title{Lorem Ipsum}
+\date{\today}
+
+\usepackage[backend=biber,
+            style=abnt,
+            pretty,
+            repeatfields,
+            noslsn,
+            natbib,
+            extrayear,
+            ]{biblatex}
+\addbibresource{~/.biblio.bib}
+
+\begin{document}
+
+$0
+
+\end{document}
+

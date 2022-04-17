@@ -1,0 +1,16 @@
+#! /bin/bash
+session="dge"
+
+zathura "/home/silenus/docs/Trampo/DGE/DGE.pdf" &
+
+# Check if the session exists, discarding output
+# We can check $? for the exit status (zero for success, non-zero for failure)
+tmux has-session -t $session 2>/dev/null
+
+if [ $? != 0 ]; then
+  # Set up your session
+    tmux new-session -d -s $session -n "notas" -c ~/docs/Trampo/DGE "nvim notas.md"
+fi
+
+tmux -2 attach-session -t $session
+

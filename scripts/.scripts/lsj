@@ -1,0 +1,70 @@
+#! /usr/bin/env python
+
+"""
+Script para obter entradas do dicionário LSJ online.
+"""
+
+import sys
+import os
+import betacode.conv 
+
+def organizador(texto):
+    ascep_maiores = ["A ", "B ", "C ", "D ", 'E ', 'F ', 'G ', 'H ', 'I ', 'J ', 'K ', 'L ',
+            'M ', 'N ', 'O ', 'P ', 'Q ', 'R ', 'S ', 'T ', 'U ', 'W ', 'V ', 'X ', 'Y ',
+            'Z ']
+    maj = []
+    ant = ascep_maiores[0]
+    for i in ascep_maiores:
+        if texto.find(i) > 0 and ascep_maiores.index(ant) == ascep_maiores.index(i) - 1:
+            if ascep_maiores.index(i) == 0:
+                maj.append(texto[:texto.find(i)])
+                ant = i
+            else:
+                maj.append(texto[texto.find(ant):texto.find(i)])
+                ant = i
+    return maj
+
+uni = betacode.conv.beta_to_uni(sys.argv[-1])
+
+if sys.argv[1] == sys.argv[-1]:
+    os.system(f"firefox https://lsj.gr/wiki/{uni}")
+
+else:
+    if sys.argv[1] == "-w":
+       os.system(f"w3m  https://lsj.gr/wiki/{uni}")
+
+    elif sys.argv[1] == "-e":
+        import requests
+        from bs4 import BeautifulSoup
+
+        page = requests.get(f"https://lsj.gr/wiki/{uni}")
+        soup = BeautifulSoup(page.content, 'html.parser')
+
+        ps = soup.find_all("p")
+        # lsj = {"info": ps[1], "significado": ps[2]}
+        
+        if sys.argv[2] == "-o":
+            if sys.argv[3] == sys.argv[-1]:
+                arquivo = "output.txt"
+            else:
+                arquivo = sys.argv[3]
+
+            with open(arquivo, "w") as saida:
+                saida.write(uni)
+                saida.write("\n")
+                # for i in lsj:
+                    # saida.write(lsj[i].get_text())
+                    # saida.write("\n")
+                saida.write(f"{ps[1].get_text()}\n{ps[2].get_text()}")
+
+
+        else:
+            #strg = uni + ps[1].get_text() + ps[2].get_text()
+            #for i in organizador(strg):
+            #    print(i)
+            #    print()
+            print(uni)
+            print(f"{ps[1].get_text()}\n{ps[2].get_text()}")
+            # for i in lsj:
+                # print(lsj[i].get_text())
+

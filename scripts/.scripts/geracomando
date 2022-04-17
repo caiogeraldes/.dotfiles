@@ -1,0 +1,5 @@
+#! /bin/bash
+
+echo "#" $1 >> ~/.scripts/comandos.sh
+echo $2 >> ~/.scripts/comandos.sh
+

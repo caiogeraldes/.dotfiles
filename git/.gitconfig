@@ -1,0 +1,7 @@
+[credential]
+	helper = cache
+[user]
+	email = caio.geraldes@usp.br
+	name = Caio Geraldes
+[init]
+	defaultBranch = main

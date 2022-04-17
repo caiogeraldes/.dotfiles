@@ -1,0 +1,14 @@
+#! /bin/bash
+
+if [ $1 -eq $1 2>/dev/null ] && [ $2 -eq $2 2>/dev/null ] && [ $1 -gt 0 ] && [ $2 -gt 0 ]
+then
+	geldner $1 $2 &
+	jamison	$1 $2 &
+	koln	$1 $2 &
+else
+    echo "Insira um valor válido."
+fi
+
+
+
+

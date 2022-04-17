@@ -1,0 +1,4 @@
+#! /bin/bash
+
+firefox https://logeion.uchicago.edu/lexidium --kiosk --new-window &
+

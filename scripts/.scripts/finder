@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rifle $(find -type f | fzf -e --reverse)
+

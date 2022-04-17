@@ -1,0 +1,20 @@
+#! /bin/bash
+
+sed -i -e 's/<[^>]*>//g' $1
+
+sed -i -e 's/Diogenes Morphological Search//g' $1
+sed -i -e 's/&nbsp;//g' $1
+sed -i -e 's/&lt;//g' $1
+sed -i -e 's/&gt;//g' $1
+sed -i -e 's/Go to Context//g' $1
+sed -i '1,13d;$d' $1
+
+# sed -i -e 's/<++>//g' $1
+# sed -i -e 's/<++>//g' $1
+# sed -i -e 's/<++>//g' $1
+# sed -i -e 's/<++>//g' $1
+# sed -i -e 's/<++>//g' $1
+# sed -i -e 's/<++>//g' $1
+# sed -i -e 's/<++>//g' $1
+
+

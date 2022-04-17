@@ -1,0 +1,5 @@
+#! /bin/zsh
+
+cd ~/docs/Mestrado/dissert;
+pwd;
+nvim main.tex

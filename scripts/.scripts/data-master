@@ -1,0 +1,4 @@
+#! /bin/zsh
+
+cd ~/docs/Mestrado/master-data
+rstudio-bin & disown
