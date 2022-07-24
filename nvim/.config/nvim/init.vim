@@ -69,6 +69,7 @@ source ~/.config/nvim/plugins/vim-snippets.vim
 source ~/.config/nvim/plugins/tpope.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/Nvim-R.vim
+source ~/.config/nvim/plugins/rust.vim
 " source ~/.config/nvim/plugins/deoplete.vim
 source ~/.config/nvim/plugins/editorconfig.vim
 source ~/.config/nvim/plugins/polyglot.vim
@@ -128,7 +129,7 @@ source ~/.config/nvim/lua/orgmode.vim
 " Misc
 "--------------------------------------------------------------------------
 autocmd BufRead,BufNewFile *.tex set filetype=tex
-set spell spelllang=pt,en,de,fr
+autocmd BufRead,BufNewFile *.tex set spell spelllang=pt,en,de,fr
 
 " This is new style
 " call deoplete#custom#var('omni', 'input_patterns', {

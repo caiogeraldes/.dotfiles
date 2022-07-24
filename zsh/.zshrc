@@ -72,7 +72,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode pyenv compleat poetry)
+plugins=(git vi-mode pyenv compleat poetry z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,18 +111,11 @@ alias ls="ls --group-directories-first --color"
 alias bt="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80"
 alias btm="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 ~/.biblio.bib"
 
-export EDITOR="/usr/local/bin/nvim"
-export VISUAL="/usr/local/bin/nvim"
+export EDITOR="/usr/bin/nvim"
+export VISUAL="/usr/bin/nvim"
 export SHELL="/bin/zsh"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-alias upwal="wal -i ~/imagens/wallp/SK-A-668.jpg --saturate .6"
-
-# Import the colors.
-. "${HOME}/.cache/wal/colors.sh"
-
-# Create the alias.
-alias dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -148,20 +141,11 @@ CLTK_DATA="/home/silenus/.cltk_data"; export CLTK_DATA
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
-source /home/silenus/.config/broot/launcher/bash/br
-tre() { command tre "$@" -e && source "/tmp/tre_aliases_$USER" 2>/dev/null; }
-
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
 
-
-TEXMFDIST="/usr/share/texmf-dist"
-TEXMFHOME=/home/silenus/.texmf
-compctl -k "(($(awk '/^name[^.]*$/ {print $2}' $(kpsewhich -var-value TEXMFROOT)/tlpkg/texlive.tlpdb)))" texdoc
-alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
-alias ttllocalmgr='tllocalmgr --mirror https://ctan.dcc.uchile.cl/systems/texlive/tlnet'
 
 PATH="/home/silenus/.perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/silenus/.perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
@@ -345,3 +329,4 @@ _gh()
 if [ "$funcstack[1]" = "_gh" ]; then
     _gh
 fi
+

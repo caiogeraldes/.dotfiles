@@ -53,6 +53,7 @@ autocmd FileType tex map <F4> :w! \| !biber main <CR>
 """" Rscript
 augroup file_r
     autocmd!
+    autocmd FileType r set nospell
     let R_source = '~/.config/nvim/tmux_split.vim'
     autocmd BufRead,BufNewFile *.r set filetype=r
     autocmd FileType r map <F5> :w! \| !Rscript %:t <CR>
@@ -92,6 +93,8 @@ augroup END
 """ rust
 augroup file_rust
     autocmd!
+    autocmd FileType rust set nospell
+    autocmd BufWritePre *.rs execute ':RustFmt'
     " let g:deoplete#enable_at_startup = 0
     autocmd FileType rust map <F5> :w! \| :!cargo run<CR>
     autocmd Filetype rust set tabstop=4

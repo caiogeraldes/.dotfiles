@@ -32,8 +32,8 @@
 options(repos=c("https://vps.fmvz.usp.br/CRAN/"))
 
 # Auto-completion for package names.
-utils::rc.settings(ipck=TRUE)
-library(colorout)
+# utils::rc.settings(ipck=TRUE)
+# library(colorout)
 
 if(Sys.getenv("NVIMR_TMPDIR") == ""){
     options(defaultPackages = c("utils", "grDevices", "graphics", "stats", "methods"))
@@ -49,5 +49,5 @@ if(interactive()){
  }
 }
 
-options(tidyverse.quiet = TRUE)
-library(tidyverse)
+# options(tidyverse.quiet = TRUE)
+# library(tidyverse)

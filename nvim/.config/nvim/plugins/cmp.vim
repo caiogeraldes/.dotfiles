@@ -2,6 +2,7 @@
 Plug 'hrsh7th/nvim-cmp'
 
 " LSP completion source for nvim-cmp
+Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 
 " Other usefull completion sources
