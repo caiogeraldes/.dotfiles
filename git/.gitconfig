@@ -1,7 +1,21 @@
-[credential]
-	helper = cache
+# This is Git's per-user configuration file.
 [user]
-	email = caio.geraldes@usp.br
-	name = Caio Geraldes
+# Please adapt and uncomment the following lines:
+    name = Caio Geraldes
+    email = caio.geraldes@usp.br
 [init]
-	defaultBranch = main
+    defaultBranch = main
+[credential]
+    helper = cache
+
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
