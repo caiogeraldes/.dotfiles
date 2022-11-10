@@ -96,10 +96,13 @@ augroup file_rust
     autocmd FileType rust set nospell
     autocmd BufWritePre *.rs execute ':RustFmt'
     " let g:deoplete#enable_at_startup = 0
-    autocmd FileType rust map <F5> :w! \| :!cargo run<CR>
+    autocmd FileType rust map <F5> :w! \| :Cargo run<CR>
     autocmd Filetype rust set tabstop=4
     autocmd FileType rust set softtabstop=4
     autocmd FileType rust set shiftwidth=4
+    autocmd FileType rust map <leader>c :Cargo check<CR>
+    autocmd FileType rust map <leader>b :Cargo build<CR>
+    autocmd FileType rust map <leader>t :Cargo test<CR>
 augroup END
 
 
