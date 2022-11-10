@@ -72,7 +72,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode pyenv compleat poetry z)
+plugins=(git vi-mode pyenv compleat poetry z rust ripgrep sudo tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,9 +107,12 @@ PATH="./node_modules/.bin:$PATH"
 alias vim='nvim'
 alias vimconfig="nvim ~/.config/nvim/init.vim"
 autoload -U colors && colors
-alias ls="ls --group-directories-first --color"
+alias ls="exa --group-directories-first --icons"
+alias la="exa --group-directories-first --icons -al --git"
+alias lg="exa --group-directories-first --icons -a --git-ignore"
+alias ll="exa --group-directories-first --icons -l --git"
 alias bt="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80"
-alias btm="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 ~/.biblio.bib"
+# alias btm="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 ~/.biblio.bib"
 
 export EDITOR="/usr/bin/nvim"
 export VISUAL="/usr/bin/nvim"
@@ -330,3 +333,5 @@ if [ "$funcstack[1]" = "_gh" ]; then
     _gh
 fi
 
+
+source /home/silenus/.config/broot/launcher/bash/br
