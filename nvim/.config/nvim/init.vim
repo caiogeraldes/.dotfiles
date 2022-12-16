@@ -1,6 +1,6 @@
 "
 "   NVIM - Config - Silenus
-"   2021
+"   2022
 "
 
 "--------------------------------------------------------------------------
@@ -8,6 +8,8 @@
 "--------------------------------------------------------------------------
 
 filetype indent on
+filetype plugin on
+syntax on
 set expandtab
 set shiftwidth=4
 set tabstop=4
@@ -31,7 +33,7 @@ set clipboard=unnamedplus
 set confirm
 set exrc
 set backup
-set backupdir=~/.local/share/nvim/backup//
+set backupdir=~/.local/share/nvim/backup/
 set updatetime=300 " Reduce time for highlighting other references
 set redrawtime=10000 " Allow more time for loading syntax on large files
 
@@ -58,6 +60,7 @@ source ~/.config/nvim/plugins/gruvbox.vim
 source ~/.config/nvim/plugins/vundle.vim
 source ~/.config/nvim/plugins/black.vim
 source ~/.config/nvim/plugins/kos.vim
+source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/vim-rainbow.vim
 source ~/.config/nvim/plugins/pievim.vim
 source ~/.config/nvim/plugins/unicode.vim
@@ -69,7 +72,6 @@ source ~/.config/nvim/plugins/vim-snippets.vim
 source ~/.config/nvim/plugins/tpope.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/Nvim-R.vim
-source ~/.config/nvim/plugins/rust.vim
 " source ~/.config/nvim/plugins/deoplete.vim
 source ~/.config/nvim/plugins/editorconfig.vim
 source ~/.config/nvim/plugins/polyglot.vim
@@ -86,6 +88,7 @@ source ~/.config/nvim/plugins/neomake.vim
 source ~/.config/nvim/plugins/treesitter.vim
 source ~/.config/nvim/plugins/rust.vim
 source ~/.config/nvim/plugins/stan.vim
+source ~/.config/nvim/plugins/vimwiki.vim
 call plug#end()
 doautocmd User PlugLoaded
 
@@ -98,6 +101,7 @@ map gf :edit <cfile><cr>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
+nmap <C-k> <C-w>k
 map <C-l> <C-w>l
 vmap < <gv
 vmap > >gv

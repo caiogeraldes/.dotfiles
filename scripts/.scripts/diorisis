@@ -1,4 +1,0 @@
-#! /bin/bash
-
-cd /home/silenus/docs/Textos/DBs/diorisis
-./Diorisis\ Search\ 2.0

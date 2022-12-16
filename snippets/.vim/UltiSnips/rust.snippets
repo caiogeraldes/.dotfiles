@@ -1,0 +1,39 @@
+snippet fntodo "Unfinished function" bA
+fn ${1:yet_todo}(${2:}) -> ${3:io::Result<()>} {
+	todo!()
+}
+endsnippet
+
+snippet ioresult "io::Result<()>" A
+io::Result<()>
+endsnippet
+
+snippet tmod "Scafolding for test module" bA
+#[cfg(test)]
+mod test {
+	use super::*;
+	#[test]
+	fn test_${1:test}() {
+		$0
+	}
+}
+endsnippet
+
+snippet tfn "Scafolding for single test function" bA
+#[test]
+fn test_${1:test}() {
+	$0
+}
+endsnippet
+
+snippet aeq "" bA
+assert_eq!($1, $2);
+endsnippet
+
+snippet dd "Derive Debug" bA
+#[derive(Debug)]
+endsnippet
+
+snippet dpe "Derive PartialEq" bA
+#[derive(PartialEq)]
+endsnippet

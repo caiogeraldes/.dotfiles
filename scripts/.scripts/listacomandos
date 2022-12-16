@@ -1,4 +1,4 @@
 #! /bin/bash
 
-cat ~/.scripts/comandos.sh
+batcat ~/.scripts/comandos.sh
 

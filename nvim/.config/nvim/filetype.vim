@@ -168,3 +168,15 @@ augroup END
 " Arduino
 let g:arduino_home_dir = $HOME . "/.arduino15"
 
+
+""" Markdown config
+augroup file_markdown
+    autocmd!
+    autocmd BufRead,BufNewFile *.md set filetype=rmarkdown
+augroup END
+
+augroup file_vimwiki
+    autocmd!
+    autocmd BufRead,BufNewFile *.wiki set filetype=vimwiki
+    let g:vimwiki_list = [{'path': '~/proj/wiki/', 'syntax': 'markdown'}]
+augroup END
