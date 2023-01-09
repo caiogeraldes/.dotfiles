@@ -122,6 +122,7 @@ alias ll="exa --group-directories-first --icons -l --git"
 alias bt="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 --enclosing-braces=title"
 alias _cat="/usr/bin/cat"
 alias cat="batcat -p"
+alias tectonic="tectonic -X"
 # alias btm="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 ~/.biblio.bib"
 
 export EDITOR="/usr/bin/nvim"
@@ -142,6 +143,7 @@ export GOENV="/home/silenus/.go"
 export GOMODCACHE="/home/silenus/.go/pkg/mod"
 
 export R_LIBS_USER="/home/silenus/.R/x86_64-pc-linux-gnu-library/4.1"
+export R_USER="/home/silenus/.R/x86_64-pc-linux-gnu-library/4.1"
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 
