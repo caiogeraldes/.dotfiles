@@ -1,0 +1,11 @@
+{
+  "environment": {
+    "prefix": "env",
+    "body": [
+      "\\begin{${1:center}}",
+      "\\item $2",
+      "\\end{$1}"
+    ],
+    "description": "environment"
+  }
+}
