@@ -110,34 +110,73 @@ local config = {
             vimwiki = false,
             ["which-key"] = true,
         },
-    },
+        -- If you need more control, you can use the function()...end notation
+        -- options = function(local_vim)
+        --   local_vim.opt.relativenumber = true
+        --   local_vim.g.mapleader = " "
+        -- local_vim.opt.whichwrap = vim.opt.whichwrap - { 's' } -- removing option from list
+        --   local_vim.opt.shortmess = vim.opt.shortmess + { I = true } -- add to option list
+        --
+        -- return local_vim
+        -- end,
 
-    diagnostics = {
-        virtual_text = true,
-        underline = true,
-    },
-
-    lsp = {
-        servers = {
-            "pyright",
-            "rust_analyzer",
-            "texlab",
-            "yamlls",
+        -- Set dashboard header
+        header = {
+                " █████  ███████ ████████ ██████   ██████",
+                "██   ██ ██         ██    ██   ██ ██    ██",
+                "███████ ███████    ██    ██████  ██    ██",
+                "██   ██      ██    ██    ██   ██ ██    ██",
+                "██   ██ ███████    ██    ██   ██  ██████",
+                " ",
+                "    ███    ██ ██    ██ ██ ███    ███",
+                "    ████   ██ ██    ██ ██ ████  ████",
+                "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
+                "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
+                "    ██   ████   ████   ██ ██      ██",
         },
-        formatting = {
-            format_on_save = {
-                enabled = true, -- enable or disable format on save globally
-                allow_filetypes = { -- enable format on save for specified filetypes only
-                    -- "go",
+
+        -- Default theme configuration
+        default_theme = {
+                -- Modify the color palette for the default theme
+                colors = {
+                        fg = "#abb2bf",
+                        bg = "#1e222a",
                 },
-                ignore_filetypes = { -- disable format on save for specified filetypes
-                    -- "python",
+                highlights = function(hl) -- or a function that returns a new table of colors to set
+                        local C = require "default_theme.colors"
+
+                        hl.Normal = { fg = C.fg, bg = C.bg }
+
+                        -- New approach instead of diagnostic_style
+                        hl.DiagnosticError.italic = true
+                        hl.DiagnosticHint.italic = true
+                        hl.DiagnosticInfo.italic = true
+                        hl.DiagnosticWarn.italic = true
+
+                        return hl
+                end,
+                -- enable or disable highlighting for extra plugins
+                plugins = {
+                        aerial = true,
+                        beacon = false,
+                        bufferline = true,
+                        cmp = true,
+                        dashboard = true,
+                        highlighturl = true,
+                        hop = false,
+                        indent_blankline = true,
+                        lightspeed = false,
+                        ["neo-tree"] = true,
+                        notify = true,
+                        ["nvim-tree"] = false,
+                        ["nvim-web-devicons"] = true,
+                        rainbow = true,
+                        symbols_outline = false,
+                        telescope = true,
+                        treesitter = true,
+                        vimwiki = false,
+                        ["which-key"] = true,
                 },
-            },
-            disabled = { -- disable formatting capabilities for the listed language servers
-                -- "sumneko_lua",
-            },
-            timeout_ms = 1000, -- default format timeout
         },
         mappings = {
             n = {
