@@ -4,9 +4,7 @@ return {
   {
     "williamboman/mason-lspconfig.nvim",
     -- overrides `require("mason-lspconfig").setup(...)`
-    opts = {
-      ensure_installed = { "lua_ls", "texlab" },
-    },
+    opts = {}
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
   {
@@ -14,22 +12,16 @@ return {
     -- overrides `require("mason-null-ls").setup(...)`
     opts = {
       ensure_installed = {
-        "prettier",
-        "stylua",
-        "luacheck",
-        "luaformatter",
-        "rustfmt",
-        "rust-analyzer",
-        "python-lsp-server",
-        "svelte-language-server",
-      },
-    },
-  },
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    -- overrides `require("mason-nvim-dap").setup(...)`
-    opts = {
-      -- ensure_installed = { "python" },
-    },
-  },
+        "prettier", "stylua", "luacheck", "luaformatter", "rustfmt",
+        "rust-analyzer", "python-lsp-server", "svelte-language-server",
+        "texlab"
+      }
+    }
+  }, {
+  "jay-babu/mason-nvim-dap.nvim",
+  -- overrides `require("mason-nvim-dap").setup(...)`
+  opts = {
+    -- ensure_installed = { "python" },
+  }
+}
 }
