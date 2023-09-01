@@ -3,7 +3,7 @@ return {
   "simrat39/rust-tools.nvim",
   "tpope/vim-surround",
   "tpope/vim-repeat",
-  'lervag/vimtex',
+  "lervag/vimtex",
   "sainnhe/sonokai",
   "sainnhe/gruvbox-material",
   "jamespeapen/Nvim-R",

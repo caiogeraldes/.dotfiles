@@ -111,6 +111,3 @@ PERL_LOCAL_LIB_ROOT="$HOME/.perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}
 PERL_MB_OPT="--install_base \"$HOME/.perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5"; export PERL_MM_OPT;
 
-source "$HOME/.config/broot/launcher/bash/br"
-
-source /home/caiog/.config/broot/launcher/bash/br
