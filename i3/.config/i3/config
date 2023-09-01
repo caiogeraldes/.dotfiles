@@ -158,8 +158,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
         bindsym l exec i3-msg exit
-        bindsym r exec systemctl reboot
-        bindsym s exec systemctl shutdown
+        bindsym r exec --no-startup-id reboot
+        bindsym s exec --no-startup-id shutdown now
         bindsym Escape mode "default"
         bindsym Return mode "default"
 }
