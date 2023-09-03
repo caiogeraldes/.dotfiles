@@ -41,13 +41,18 @@ return {
             desc = "English + Greek"
         },
         ["<leader>sq"] = {"<cmd>setlocal nospell<cr>", desc = "Disable"},
-        ["<leader>m"] = {desc = "󱁤 Compiler"},
-        ["<leader>mt"] = {"<cmd>TexlabBuild<cr>", desc = "LaTeX"},
-        ["<leader>mf"] = {"<cmd>TexlabForward<cr>", desc = "Forward Search"},
-        ["<leader>mb"] = {"<cmd>!biber main<cr>", desc = "Biber"},
-        ["<leader>mz"] = {"<cmd>!zathura main.pdf&<cr><cr>", desc = "Zathura"},
-
-        ["<leader>fB"] = {"<cmd>Telescope bibtex<cr>", desc = "Find BibTeX"}
+        ["<leader>l"] = {desc = " LaTeX"},
+        ["<leader>ll"] = {"<cmd>TexlabBuild<cr>", desc = "LaTeX"},
+        ["<leader>lf"] = {"<cmd>TexlabForward<cr>", desc = "Forward Search"},
+        ["<leader>lb"] = {"<cmd>!biber main<cr>", desc = "Biber"},
+        ["<leader>lz"] = {"<cmd>!zathura main.pdf&<cr><cr>", desc = "Zathura"},
+        ["<leader>fB"] = {"<cmd>Telescope bibtex<cr>", desc = "Find BibTeX"},
+        ["<leader>r"] = {desc = " Rust"},
+        ["<leader>rb"] = {"<cmd>:!cargo build<cr>", desc = "Build"},
+        ["<leader>rc"] = {"<cmd>:!cargo check<cr>", desc = "Check"},
+        ["<leader>rC"] = {"<cmd>:!cargo clippy<cr>", desc = "Clippy"},
+        ["<leader>rt"] = {"<cmd>:!cargo test<cr>", desc = "Test"},
+        ["<leader>rr"] = {"<cmd>:!cargo run<cr>", desc = "Run"}
     },
     t = {
         -- setting a mapping to false will disable it
