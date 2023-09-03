@@ -16,6 +16,7 @@ return {
   "kdheepak/cmp-latex-symbols",
   "jc-doyle/cmp-pandoc-references",
   "onsails/lspkind-nvim",
+  "eigenfoo/stan-vim",
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
