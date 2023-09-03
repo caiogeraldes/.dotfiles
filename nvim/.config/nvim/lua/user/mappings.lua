@@ -45,6 +45,7 @@ return {
         ["<leader>mt"] = {"<cmd>TexlabBuild<cr>", desc = "LaTeX"},
         ["<leader>mf"] = {"<cmd>TexlabForward<cr>", desc = "Forward Search"},
         ["<leader>mb"] = {"<cmd>!biber main<cr>", desc = "Biber"},
+        ["<leader>mz"] = {"<cmd>!zathura main.pdf&<cr><cr>", desc = "Zathura"},
 
         ["<leader>fB"] = {"<cmd>Telescope bibtex<cr>", desc = "Find BibTeX"}
     },
