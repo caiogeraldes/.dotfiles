@@ -16,13 +16,15 @@ return {
         diagnostics_mode = 2,
         icons_enabled = true,
         ui_notifications_enabled = true,
-        python3_host_prog = "/home/silenus/.miniconda3/envs/nvim3/bin/python3",
+        python3_host_prog = "$HOME/.pyenv/versions/neovim/bin/python",
         vimtex_view_general_viewer = "zathura",
         vimtex_quickfix_open_on_warning = 0,
         tex_flavor = "lualatex",
         gruvbox_material_background = "hard",
         gruvbox_material_transparent_background = 1,
-        gruvbox_material_better_performance = 1
+        gruvbox_material_better_performance = 1,
+        loaded_ruby_provider = 0,
+        loaded_perl_provider = 0
     }
 }
 -- If you need more control, you can use the function()...end notation
