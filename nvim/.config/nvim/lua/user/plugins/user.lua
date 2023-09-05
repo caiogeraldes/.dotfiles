@@ -1,9 +1,7 @@
 return {
   "rust-lang/rust.vim",
   "simrat39/rust-tools.nvim",
-  "tpope/vim-surround",
   "tpope/vim-repeat",
-  "lervag/vimtex",
   "sainnhe/sonokai",
   "sainnhe/gruvbox-material",
   "jamespeapen/Nvim-R",
@@ -13,10 +11,19 @@ return {
   "hrsh7th/cmp-emoji",
   "f3fora/cmp-spell",
   "ray-x/cmp-treesitter",
-  "kdheepak/cmp-latex-symbols",
   "jc-doyle/cmp-pandoc-references",
   "onsails/lspkind-nvim",
   "eigenfoo/stan-vim",
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
