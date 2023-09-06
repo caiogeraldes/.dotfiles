@@ -187,6 +187,7 @@ bindsym $mod+r mode "resize"
 
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-fill img/wallp/the_biglin_brothers_racing_1953.7.1.jpg
+exec --no-startup-id rclone mount --daemon --vfs-cache-mode full usp:/ ./usp/
 
 ########
 # APPS #
