@@ -88,8 +88,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-export R_LIBS_USER="$HOME/.R/x86_64-pc-linux-gnu-library/4.1"
-export R_USER="$HOME/.R/x86_64-pc-linux-gnu-library/4.1"
+export R_LIBS_USER="$HOME/.R/site-library/"
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
