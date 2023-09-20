@@ -115,6 +115,7 @@ export ZK_NOTEBOOK_DIR=$HOME/caderno/
 alias diario='zk list diário'
 alias bomdia='zk new diário'
 alias afazeres='zk edit 0Z2icriP.md'
+
 # bun completions
 [ -s "/home/caiog/.bun/_bun" ] && source "/home/caiog/.bun/_bun"
 
