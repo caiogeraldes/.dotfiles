@@ -194,6 +194,7 @@ exec --no-startup-id feh --bg-fill img/wallp/the_biglin_brothers_racing_1953.7.1
 ########
 
 bindsym $mod+F2 exec firefox
+bindsym $mod+F4 exec firefox --private-window
 bindsym $mod+F8 exec rclone mount --daemon --vfs-cache-mode full usp:/ $HOME/docs/USP/
 
 #######
