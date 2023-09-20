@@ -110,6 +110,10 @@ PERL_LOCAL_LIB_ROOT="$HOME/.perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}
 PERL_MB_OPT="--install_base \"$HOME/.perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5"; export PERL_MM_OPT;
 
+export ZK_NOTEBOOK_DIR=$HOME/caderno/
+alias diario='zk list diário'
+alias bomdia='zk new diário'
+alias afazeres='zk edit 0Z2icriP.md'
 # bun completions
 [ -s "/home/caiog/.bun/_bun" ] && source "/home/caiog/.bun/_bun"
 
