@@ -149,8 +149,24 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
         bindsym l exec i3-msg exit
-        bindsym r exec --no-startup-id reboot
+        bindsym r mode "reboot: [y]es | [n]o"
+        bindsym s mode "shutdown: [y]es | [n]o"
+        bindsym Escape mode "default"
+        bindsym Return mode "default"
+}
+
+mode "shutdown: [y]es | [n]o" {
+        bindsym y exec --no-startup-id shutdown now
         bindsym s exec --no-startup-id shutdown now
+        bindsym n mode "default"
+        bindsym Escape mode "default"
+        bindsym Return mode "default"
+}
+
+mode "reboot: [y]es | [n]o" {
+        bindsym y exec --no-startup-id shutdown now
+        bindsym s exec --no-startup-id shutdown now
+        bindsym n mode "default"
         bindsym Escape mode "default"
         bindsym Return mode "default"
 }
@@ -166,16 +182,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ccedilla resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 2 px or 2 ppt
+        bindsym k resize grow height 2 px or 2 ppt
+        bindsym l resize shrink height 2 px or 2 ppt
+        bindsym ccedilla resize grow width 2 px or 2 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 2 px or 2 ppt
+        bindsym Down resize grow height 2 px or 2 ppt
+        bindsym Up resize shrink height 2 px or 2 ppt
+        bindsym Right resize grow width 2 px or 2 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -185,8 +201,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Transparency
 exec --no-startup-id picom
+# Sets wallpaper
 exec --no-startup-id feh --bg-fill img/wallp/the_biglin_brothers_racing_1953.7.1.jpg
+# Disable touchpad for 0.5 seconds after each key press
+exec --no-startup-id syndaemon -i 0.5 -t -K -R
 
 
 ########
@@ -194,8 +214,10 @@ exec --no-startup-id feh --bg-fill img/wallp/the_biglin_brothers_racing_1953.7.1
 ########
 
 bindsym $mod+F2 exec firefox
+bindsym $mod+F3 exec kitty -e ranger
 bindsym $mod+F4 exec firefox --private-window
 bindsym $mod+F8 exec rclone mount --daemon --vfs-cache-mode full usp:/ $HOME/docs/USP/
+bindsym F6 exec  --no-startup-id bash ~/.scripts/touchpad_toggle.sh
 
 #######
 #THEME#
