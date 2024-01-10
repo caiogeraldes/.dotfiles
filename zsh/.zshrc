@@ -69,15 +69,17 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim='nvim'
+alias _vim='/usr/bin/vim.tiny'
 alias vimconfig="nvim ~/.config/nvim/init.vim"
 autoload -U colors && colors
+alias _ls="/usr/bin/ls"
 alias ls="exa --group-directories-first --icons"
 alias lg="exa --group-directories-first --icons --git-ignore"
 alias la="exa --group-directories-first --icons -al --git"
 alias ll="exa --group-directories-first --icons -l --git"
 alias bt="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 --enclosing-braces=title --no-escape"
 alias _cat="/usr/bin/cat"
-alias cat="batcat -p"
+alias cat="batcat"
 alias tectonic="tectonic -X"
 # alias btm="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 ~/.biblio.bib"
 
