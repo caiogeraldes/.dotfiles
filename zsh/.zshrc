@@ -1,6 +1,6 @@
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.scripts:$HOME/.local/bin:$HOME/.npm/bin/:$HOME/go/bin/:/usr/local/go/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.scripts:$HOME/.local/bin:$HOME/.npm/bin/:$HOME/go/bin/:/usr/local/go/bin:/usr/local/texlive/2023/bin/x86_64-linux/
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -122,3 +122,6 @@ alias afazeres='zk edit 0Z2icriP.md'
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# TeX
+export TEXMFHOME="$HOME/.texlive2023/"
