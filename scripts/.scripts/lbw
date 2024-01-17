@@ -1,0 +1,6 @@
+#! /usr/bin/zsh
+
+bw unlock | grep "export" | xargs -d "\n" echo | sed "s/^\\$ //" > /tmp/bw
+
+source /tmp/bw
+rm /tmp/bw
