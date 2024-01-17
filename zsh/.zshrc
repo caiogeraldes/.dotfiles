@@ -1,6 +1,6 @@
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.scripts:$HOME/.local/bin:$HOME/.npm/bin/:$HOME/go/bin/:/usr/local/go/bin:/usr/local/texlive/2023/bin/x86_64-linux/
+ export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.scripts:$HOME/.local/bin:$HOME/.npm/bin/:$HOME/go/bin/:/usr/local/go/bin:/usr/local/texlive/2023/bin/x86_64-linux/:$HOME/.poetry/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -103,7 +103,7 @@ NLTK_DATA="$HOME/.nltk_data"; export NLTK_DATA
 CLTK_DATA="$HOME/.cltk_data"; export CLTK_DATA
 STANZA_RESOURCES_DIR="$HOME/.stanza_resources"; export STANZA_RESOURCES_DIR
 
-export PATH="$HOME/.poetry/bin:$PATH"
+
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
@@ -127,3 +127,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # TeX
 export TEXMFHOME="$HOME/.texlive2023/"
+
+alias mysudo='sudo -E env "PATH=$PATH"'
