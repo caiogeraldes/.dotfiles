@@ -121,3 +121,5 @@ xserver-xorg-input-synaptics
 zathura
 zathura-djvu
 zsh
+pipx
+miller

@@ -1,6 +1,6 @@
 
 # If you come from bash you might have to change your $PATH.
- export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.scripts:$HOME/.local/bin:$HOME/.npm/bin/:$HOME/go/bin/:/usr/local/go/bin:/usr/local/texlive/2023/bin/x86_64-linux/:$HOME/.poetry/bin:$PATH
+ export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.scripts:$HOME/.local/bin:$HOME/.npm/bin/:$HOME/go/bin/:/usr/local/go/bin:/usr/local/texlive/2023/bin/x86_64-linux/:$HOME/.poetry/bin:$PATH:$HOME/.morpheus/bin/
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -77,7 +77,7 @@ alias ls="exa --group-directories-first --icons"
 alias lg="exa --group-directories-first --icons --git-ignore"
 alias la="exa --group-directories-first --icons -al --git"
 alias ll="exa --group-directories-first --icons -l --git"
-alias bt="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 --enclosing-braces=title --no-escape"
+alias bibt="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 --enclosing-braces=title --no-escape"
 alias _cat="/usr/bin/cat"
 alias cat="batcat"
 alias tectonic="tectonic -X"
@@ -129,3 +129,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export TEXMFHOME="$HOME/.texlive2023/"
 
 alias mysudo='sudo -E env "PATH=$PATH"'
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"

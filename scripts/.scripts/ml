@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+# echo $1 |\
+  # MORPHLIB=~/.morpheus/stemlib cruncher -L |\
+  # sed "s/<NL>//g; s/<\/NL>/\n/g; s/\ \ /\t/g; s/ \?\t\+/\t/g; s/\([A-Z]\) /\1\t/g" |\
+  # batcat -l tsv --style=plain --tabs 8 -n
+morpheus-cli $1 -q | mlr --csv remove-empty-columns | tidy-viewer -t $1 -u40 -c3 -D
