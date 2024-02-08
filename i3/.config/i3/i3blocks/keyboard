@@ -1,10 +1,16 @@
 #! /bin/bash
 
+case $BLOCK_BUTTON in
+    1) xkb-switch -n ;;  # left click, next keyboard layout
+esac
+
 case "$(xset -q|grep LED| awk '{ print $10 }')" in
-    "00000000") KBD="pt 🇧🇷" ;;
-    "00000002") KBD="pt 🇧🇷" ;;
-    "00001000") KBD="grc 🇬🇷" ;;
-    "00001002") KBD="grc 🇬🇷" ;;
+    "00000000") KBD="󰬵 pt 🇧🇷" ;;
+    "00000002") KBD="󰬵 pt 🇧🇷" ;;
+    "00000003") KBD="󰬶 PT 🇧🇷" ;;
+    "00001000") KBD="󰬵 gr 🇬🇷" ;;
+    "00001002") KBD="󰬵 gr 🇬🇷" ;;
+    "00001003") KBD="󰬶 GR 🇬🇷" ;;
     *) KBD="unknown" ;;
 esac
 

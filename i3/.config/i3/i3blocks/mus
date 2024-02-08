@@ -1,0 +1,28 @@
+#! /usr/bin/env bash
+
+case $BLOCK_BUTTON in
+  1) playerctl play-pause ;;  # left click, play/pause
+  3) playerctl next ;;  # right click, next
+esac
+
+let MUS=playerctl metadata |\
+    sed "s/  \+/\t/g;s/\t\t/\t/g"  |\
+    cut --delimiter=$'\t' -f 2 |\
+    awk 'NR>3 && NR < 7 {print}' |\
+    tr '\n' '|' |\
+    sed 's/|/ | /g; s/| $/\n/g';
+
+case "$(playerctl status)" in
+    ""|"Stopped") echo "󰝛" ;;
+    "Playing") 
+      TITLE=$(playerctl metadata title);
+      # ALBUM=$(playerctl metadata album);
+      ARTIST=$(playerctl metadata artist);
+      echo " $TITLE | $ARTIST";; # | $ALBUM" ;;
+    "Paused") 
+      TITLE=$(playerctl metadata title);
+      # ALBUM=$(playerctl metadata album);
+      ARTIST=$(playerctl metadata artist);
+      echo "󰏤 $TITLE | $ARTIST";; # | $ALBUM" ;;
+esac
+

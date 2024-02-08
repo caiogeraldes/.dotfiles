@@ -14,6 +14,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
+case $BLOCK_BUTTON in
+    1) bash $HOME/.scripts/rofi-network-manager/rofi-network-manager.sh ;;  # left click, next keyboard layout
+esac
+
 #------------------------------------------------------------------------
 
 INTERFACE="${BLOCK_INSTANCE:-wlan0}"

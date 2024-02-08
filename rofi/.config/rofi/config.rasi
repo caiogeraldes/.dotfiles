@@ -1,4 +1,4 @@
-@theme "gruvbox-light-soft"
+@theme "gruvbox-dark-hard"
 
 * {
   font:                       "Mononoki Nerd Font Mono 14";
