@@ -5,6 +5,7 @@
 # Uses: date maim notify-send rofi xclip xdotool
 
 save_location="$HOME/img/Screenshots"
+echo $save_location
 screenshot_path="$save_location/$(date +'%Y-%m-%d-%H%M%S').png"
 
 screen=' tela'

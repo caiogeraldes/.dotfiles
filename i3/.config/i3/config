@@ -15,6 +15,7 @@ set $mod Mod4
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+exec --no-startup-id synclient TapButton1=1
 
 exec --no-startup-id dunst
 
@@ -23,11 +24,12 @@ exec --no-startup-id dunst
 
 # xss-lock grabs a logind suspend inhibit lock and will use betterlockscreen to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l dimpixel --nofork
+exec --no-startup-id xset s 180 120
+exec --no-startup-id xss-lock -n dim-screen.sh --transfer-sleep-lock -- betterlockscreen -l blur
 # lock screen using wallpaper
 # Install i3lock-color: https://github.com/Raymo111/i3lock-color
 # run ~/dotfiles/requirements/manual.sh
-bindsym $mod+l exec --no-startup-id "betterlockscreen -l blur"
+bindsym $mod+l exec --no-startup-id "loginctl lock-session"
 
 # Use pamixer to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -171,9 +173,9 @@ bindsym $mod+F4 exec firefox --private-window
 bindsym $mod+F8 exec rclone mount --daemon --vfs-cache-mode full usp:/ $HOME/docs/USP/
 bindsym F6 exec  --no-startup-id bash ~/.scripts/touchpad_toggle.sh
 #keyboard
-exec "setxkbmap -option 'grp:alt_shift_toggle' -layout br,gr -variant ,polytonic"
+exec "setxkbmap -option 'grp:win_space_toggle' -layout br,gr -variant ,polytonic"
 
-gaps top 30px
+gaps top 40px
 gaps bottom 5px
-gaps horizontal 3px
-gaps inner 5px
+gaps horizontal 5px
+gaps inner 10px

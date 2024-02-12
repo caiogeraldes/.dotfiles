@@ -1,8 +1,8 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 
 # If you come from bash you might have to change your $PATH.
@@ -15,8 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="bureau"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="bureau"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
@@ -76,7 +76,6 @@ export ARCHFLAGS="-arch x86_64"
 alias vim='nvim'
 alias _vim='/usr/bin/vim.tiny'
 alias vimconfig="nvim ~/.config/nvim/init.vim"
-autoload -U colors && colors
 alias _ls="/usr/bin/ls"
 alias ls="exa --group-directories-first --icons"
 alias lg="exa --group-directories-first --icons --git-ignore"
@@ -84,7 +83,7 @@ alias la="exa --group-directories-first --icons -al --git"
 alias ll="exa --group-directories-first --icons -l --git"
 alias bibt="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 --enclosing-braces=title --no-escape"
 alias _cat="/usr/bin/cat"
-alias cat="batcat"
+alias cat="bat"
 alias tectonic="tectonic -X"
 # alias btm="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 ~/.biblio.bib"
 
@@ -134,10 +133,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export TEXMFHOME="$HOME/.texlive2023/"
 
 alias mysudo='sudo -E env "PATH=$PATH"'
-export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export MANROFFOPT='-c'
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 autoload -Uz compinit
 zstyle ':completion:*' menu select

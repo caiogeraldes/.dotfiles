@@ -1,5 +1,5 @@
 font_family Mononoki Nerd Font
-font_size  12.0
+font_size  10.0
 symbol_map U+0900-U+954 Noto Sans Devanagari
 
 editor /home/caiog/.local/bin/nvim
@@ -20,6 +20,6 @@ map ctrl+shift+r set_tab_title
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Material Light Soft
+# Gruvbox Material Dark Hard
 include current-theme.conf
 # END_KITTY_THEME
