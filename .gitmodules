@@ -1,3 +1,6 @@
 [submodule "ranger/.config/ranger/plugins/ranger_devicons"]
 	path = ranger/.config/ranger/plugins/ranger_devicons
 	url = https://github.com/caiogeraldes/ranger_devicons
+[submodule "tmux/.tmux/plugins/tmux-gruvbox-material"]
+	path = tmux/.tmux/plugins/tmux-gruvbox-material
+	url = https://github.com/hasundue/tmux-gruvbox-material
