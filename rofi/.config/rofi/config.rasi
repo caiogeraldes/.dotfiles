@@ -1,5 +1,5 @@
 @theme "gruvbox-dark-hard"
 
 * {
-  font:                       "Mononoki Nerd Font Mono 11";
+  font:                       "Mononoki Nerd Font Mono 12";
  }

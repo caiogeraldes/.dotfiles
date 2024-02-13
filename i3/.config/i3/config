@@ -175,7 +175,7 @@ bindsym F6 exec  --no-startup-id bash ~/.scripts/touchpad_toggle.sh
 #keyboard
 exec "setxkbmap -option 'grp:win_space_toggle' -layout br,gr -variant ,polytonic"
 
-gaps top 40px
+gaps top 25px
 gaps bottom 5px
-gaps horizontal 5px
-gaps inner 10px
+gaps horizontal 3px
+gaps inner 5px
