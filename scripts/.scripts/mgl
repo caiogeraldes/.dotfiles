@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+echo $(betaconvert -i $1) |\
+    MORPHLIB=~/.morpheus/stemlib cruncher |\
+    sed "s/<NL>//g; s/<\/NL>/\n/g; s/\ \ /\t/g; s/\([A-Z]\) /\1\t/g" > /tmp/mg.tsv
+tabble.R /tmp/mg.tsv
+tidy-viewer /tmp/mg.csv -t $(/usr/bin/cat /tmp/mg.title) -u40 -c3 -D

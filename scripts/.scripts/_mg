@@ -1,0 +1,5 @@
+#! /usr/bin/bash
+
+echo $(betaconvert -i $1) |\
+  MORPHLIB=~/.morpheus/stemlib cruncher |\
+  sed "s/<NL>//g; s/<\/NL>/\n/g; s/\ \ /\t/g; s/\([A-Z]\) /\1\t/g"

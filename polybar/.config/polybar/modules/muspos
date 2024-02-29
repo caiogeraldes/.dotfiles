@@ -1,0 +1,20 @@
+#! /usr/bin/env bash
+
+repeat(){
+	local start=1
+	local end=${1:-80}
+	local str="${2:-=}"
+	local range=$(seq $start $end)
+	for i in $range ; do echo -n "${str}"; done
+}
+
+POS=$(playerctl metadata --format "{{ position }}")
+TOTAL=$(playerctl metadata --format "{{ mpris:length }}")
+
+PERC_POS=$( calc round\(round\($POS / $TOTAL,2\)\*10, 0\) )
+PERC_PREVIOUS=$(calc $PERC_POS-1)
+PERC_AFTER=$(calc 10-$PERC_POS)
+
+A=$(repeat $PERC_PREVIOUS -)
+C=$(repeat $PERC_AFTER -)
+echo $A"|"$C

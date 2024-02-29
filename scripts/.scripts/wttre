@@ -1,0 +1,2 @@
+#! /bin/env bash
+notify-send "$(curl -H "Accept-language: pt-br" -s 'wttr.in/?0?T?q')"

@@ -1,9 +1,9 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # If you come from bash you might have to change your $PATH.
  export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.scripts:$HOME/.local/bin:$HOME/.npm/bin/:$HOME/go/bin/:/usr/local/go/bin:/usr/local/texlive/2023/bin/x86_64-linux/:$HOME/.poetry/bin:$PATH:$HOME/.morpheus/bin/
@@ -15,7 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="bureau"
+# ZSH_THEME="bureau"
+ZSH_THEME="candy"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to automatically update without prompting.
@@ -39,9 +40,9 @@ HIST_STAMPS="dd/mm/yyyy"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# Example format: plugins=(rails git textmate ruby lighth)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode compleat z rust tmux gh ripgrep fzf)
+plugins=(git vi-mode compleat rust tmux gh ripgrep fzf golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,24 +104,13 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 eval $(opam env)
 
-NLTK_DATA="$HOME/.nltk_data"; export NLTK_DATA
-CLTK_DATA="$HOME/.cltk_data"; export CLTK_DATA
-STANZA_RESOURCES_DIR="$HOME/.stanza_resources"; export STANZA_RESOURCES_DIR
-
-
-
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+# [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 PATH="$HOME/.perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="$HOME/.perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="$HOME/.perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"$HOME/.perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$HOME/.perl5"; export PERL_MM_OPT;
-
-export ZK_NOTEBOOK_DIR=$HOME/caderno/
-alias diario='zk list diário'
-alias bomdia='zk new diário'
-alias afazeres='zk edit 0Z2icriP.md'
 
 # bun completions
 [ -s "/home/caiog/.bun/_bun" ] && source "/home/caiog/.bun/_bun"
@@ -139,3 +129,16 @@ export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
+
+eval "$(zoxide init --cmd cd zsh)"
+
+autoload edit-command-line; zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+autoload -U bashcompinit
+bashcompinit
+
+eval "$(register-python-argcomplete3 pipx)"
