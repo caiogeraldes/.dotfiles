@@ -184,6 +184,10 @@ assign [class="elisa"] → $ws9
 assign [class="spotify"] → $ws9
 assign [class="steam"] → $wsA
 
+# Autofloat r plots
+# for_window [class="R_x11"] floating enable, border none
+# for_window [class="R_x11"] resize set 640 480
+
 # lock screen using wallpaper
 # Install i3lock-color: https://github.com/Raymo111/i3lock-color
 # run ~/dotfiles/requirements/manual.sh
