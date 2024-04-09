@@ -39,6 +39,8 @@ set $mod Mod4
 floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec kitty
+# start an opaque terminal
+bindsym $mod+Shift+Return exec kitty -c $HOME/.config/kitty/opaco.conf
 # kill focused window
 bindsym $mod+Shift+q kill
 
