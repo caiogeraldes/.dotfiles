@@ -42,7 +42,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighth)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode compleat rust tmux gh ripgrep fzf golang)
+plugins=(git vi-mode compleat rust tmux gh fzf golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,10 +78,10 @@ alias vim='nvim'
 alias _vim='/usr/bin/vim.tiny'
 alias vimconfig="nvim ~/.config/nvim/init.vim"
 alias _ls="/usr/bin/ls"
-alias ls="exa --group-directories-first --icons"
-alias lg="exa --group-directories-first --icons --git-ignore"
-alias la="exa --group-directories-first --icons -al --git"
-alias ll="exa --group-directories-first --icons -l --git"
+alias ls="eza --group-directories-first --icons"
+alias lg="eza --group-directories-first --icons --git-ignore"
+alias la="eza --group-directories-first --icons -al --git"
+alias ll="eza --group-directories-first --icons -l --git"
 alias bibt="bibtex-tidy --omit=abstract --curly --numeric --space=4 --align=13 --sort=key,type,author,-year --duplicates=key --no-escape --sort-fields=title,shorttitle,author,year,month,day,journal,booktitle,location,on,publisher,address,series,volume,number,pages,doi,isbn,issn,url,urldate,copyright,category,note,metadata --trailing-commas --encode-urls --no-remove-dupe-fields --wrap=80 --enclosing-braces=title --no-escape"
 alias _cat="/usr/bin/cat"
 alias cat="batcat"
@@ -142,3 +142,12 @@ autoload -U bashcompinit
 bashcompinit
 
 eval "$(register-python-argcomplete3 pipx)"
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}

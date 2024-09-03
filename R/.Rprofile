@@ -1,8 +1,8 @@
-options(repos = c("https://vps.fmvz.usp.br/CRAN/"))
+# options(repos = c("https://vps.fmvz.usp.br/CRAN/"))
 
 # Auto-completion for package names.
 utils::rc.settings(ipck = TRUE)
-library(colorout)
+# library(colorout)
 
 if (Sys.getenv("NVIMR_TMPDIR") == "") {
   options(defaultPackages = c(

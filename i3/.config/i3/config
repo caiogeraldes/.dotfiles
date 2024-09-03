@@ -6,12 +6,6 @@
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-#mpd
-exec --no-startup-id mpd $HOME/.config/mpd/mpd.conf
-exec --no-startup-id mpdscribble
-exec --no-startup-id mpDris2
-
-
 # Touchpad tap
 exec --no-startup-id synclient TapButton1=1
 # Disable touchpad for 0.5 seconds after each key press
